@@ -1,10 +1,40 @@
-# core {{{
-[core]
-    editor= /usr/bin/vi
-    excludesfile = /Users/nick/.gitignore_global
-    pager=less -x4
+[user]
+  name = Romain Beuque
 
-#}}}
+[alias]
+  ; fast access
+
+  fe = fetch
+  pl = pull
+  ps = push
+  rb = rebase
+  oneline = log --pretty=oneline --abbrev-commit --graph
+  who = shortlog -sne
+  rubbish = clean -ndx
+  trash = clean -fdx
+  ignore = update-index --assume-unchanged
+  track = update-index --no-assume-unchanged
+  gitconfig = !cat ~/.gitconfig
+
+[core]
+  editor = vim
+  pager = less
+  whitespace = trailing-space,space-before-tab
+
+[mergetool]
+  keepbackup = true
+  keeptemporaries = true
+
+[man]
+  viewer = less
+
+[branch]
+  autosetuprebase = always
+
+[apply]
+  whitespace = fix
+
+
 # from https://github.com/durdn/cfg/blob/master/.gitconfig
 # color {{{
 [color]
