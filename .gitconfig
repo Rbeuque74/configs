@@ -1,9 +1,9 @@
 [user]
-  name = Romain Beuque
+	name = Romain Beuque
+[http]
+	proxy = 
 
 [alias]
-  ; fast access
-
   fe = fetch
   pl = pull
   ps = push
@@ -14,7 +14,6 @@
   trash = clean -fdx
   ignore = update-index --assume-unchanged
   track = update-index --no-assume-unchanged
-  gitconfig = !cat ~/.gitconfig
 
 [core]
   editor = vim
@@ -59,6 +58,7 @@
     untracked = cyan
 
 # }}}
+
 # push/pull/diff/options {{{
 [push]
     default = tracking
@@ -72,15 +72,6 @@
   whitespace = nowarn
 
 #}}}
-# difftools {{{
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
-# }}}
 # alias {{{
 [alias]
     st = status -s
@@ -103,16 +94,19 @@
     #"!git branch -ra | grep -v done"
     bra = branch -ra
     #list commands
-    le = log --oneline --decorate
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    l = log --oneline --decorate --graph --pretty=format:"%C(yellow)%h\\ %Cred%d\\ %Creset%s\\ %Cred%ad%Cblue\\ [%cn]" --date=relative
+#    le = log --oneline --decorate
+#    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+#    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+#    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+#    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
     lc  = "!f() { git ll "$1"^.."$1"; }; f"
-    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-    #list all aliases
+#    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+	#list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
-    diff = diff --word-diff
+
+	diff = diff --word-diff
     d = diff --word-diff
     dc = diff --cached
     #list modified files in last commit
@@ -169,3 +163,10 @@
     ours = "!f() { git co --ours $@ && git add $@; }; f"
     theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 # }}}
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 1600x851+0+25
+	file-view-vpane-position = 793
+	history-view-vpane-position = 674
+	file-view-hpane-position = 188
+	main-window-view = HistoryView
