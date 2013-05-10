@@ -17,3 +17,7 @@ set ruler
 set guioptions-=T 
 "colorscheme darkspectrum
 "set cursorline
+
+if has("gui_running")
+  colorscheme Tomorrow
+endif
