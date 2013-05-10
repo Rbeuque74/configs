@@ -113,3 +113,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n"

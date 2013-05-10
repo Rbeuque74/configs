@@ -10,6 +10,7 @@ set showmode
 set showcmd
 set t_Co=256
 syn on
+syntax enable
 set gfn=Inconsolata\ 9
 "set lines=45 columns=90
 set number
@@ -19,5 +20,9 @@ set guioptions-=T
 "set cursorline
 
 if has("gui_running")
-  colorscheme Tomorrow
+	colorscheme Tomorrow
+	set background=light
+else 
+	set background=dark
+	colorscheme grb256
 endif
