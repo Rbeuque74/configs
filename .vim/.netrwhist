@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/nevor/.vim'
+let g:netrw_dirhist_2='/home/nevor/Academia/Master/PPAR/TP3/temp/Code/PPAR/TP3/mandelbrot'
+let g:netrw_dirhist_3='/home/romain/.vim'
