@@ -8,6 +8,10 @@ set gfn=Inconsolata\ 9
 "set lines=45 columns=90
 set number
 set ruler 
+set autoindent
+set cindent
+filetype on
+filetype indent on
 set laststatus=2
 colorscheme grb256
 set cursorline
