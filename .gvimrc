@@ -6,7 +6,3 @@ set guioptions-=T
 set cursorline
 colorscheme Tomorrow
 set background=light
-set autoindent
-set cindent
-filetype on
-filetype indent on
