@@ -1,0 +1,109 @@
+" .vimrc générique mis à votre disposition
+" par les gentils membres actifs du Cr@ns
+" Vous pouvez l'utiliser, le redistribuer, le modifier à votre convenance.
+" Des questions, des suggestions : {nounou,ca}@lists.crans.org
+" Licence : WTFPL
+
+" Les sections commentées par "~" sont des features qui ne sont pas activées
+" par défaut. Sentez-vous libre de les décommenter pour les utiliser.
+
+"------------------------------------------------------------------------------
+"
+"
+" +-----------+
+" | Affichage |
+" +-----------+
+
+" Affiche la commande en train d'être tapée en bas à droite de l'écran
+set showcmd
+
+" Affiche le nom du fichier et le chemin dans le titre du terminal
+set title
+
+"~" " N'affiche pas sur plusieurs lignes les lignes qui sont plus grandes que la fenêtre (comme sous nano)
+"~" set nowrap
+
+"~" " Optimise la coloration de vim pour l'adapter à un terminal sombre (par défaut 'light')
+"~" set background=dark
+
+" ~~ Numérotation ~~
+" Affiche 'ligne,n de caractère,colonne' en bas à droite du terminal
+set ruler
+
+" Affiche les numéros de lignes à gauche du terminal
+set number
+
+" Retire la marge à gauche sur les numéros de lignes
+set numberwidth=2
+
+
+" +-----------------+
+" | Édition de code |
+" +-----------------+
+
+" ~~ Coloration syntaxique ~~
+" Active la coloration syntaxique
+syntax on
+
+" ~~ Indentation et tabulation ~~
+" Conserve l'indentation de la ligne précédente lors d'un retour à la ligne
+set autoindent
+
+"~" " Met les tabulations à 4 colonnes
+"~" set tabstop=4
+
+"~" " Indente à 4 colonnes pour les opérations de réindentation
+"~" set shiftwidth=4
+
+"~" " Remplace les (futures) tabulations par des espaces
+"~" set expandtab
+
+
+" +---------------------------+
+" | Recherche et substitution |
+" +---------------------------+
+
+" ~~ Recherche ~~
+" Commence la recherche dès les premiers caractères tapés (comme sous less)
+set incsearch
+
+"~" " Surligne les correspondances dans les recherches
+"~" " (Exécuter nohl pour désactiver les hl (ils restent même une fois la recherche terminée))
+"~" set hlsearch
+
+
+" +--------+
+" | Divers |
+" +--------+
+
+" Change la taille de l'historique des commandes (par défaut 20)
+set history=50
+
+"~" " Change le comportement de la TAB-complétion : on complète au plus long
+"~" " au premier appui, on affiche la liste des possibilités au deuxième
+"~" set wildmode=longest,list
+
+" +------------------+
+" | Hacks et scripts |
+" +------------------+
+
+" ~~ Hack pour mettre en rouges les espaces indésirables en fin de ligne. ~~
+" ~~ Ne gêne pas la vue en mode édition. ~~
+" ~~ Adapté de http://vim.wikia.com/wiki/Highlight_unwanted_spaces ~~
+
+"~" highlight EspaceFinLigne ctermbg=red guibg=red
+"~" match EspaceFinLigne /\s\+$/
+"~" autocmd BufWinEnter * match EspaceFinLigne /\s\+$/
+"~" autocmd InsertEnter * match EspaceFinLigne /\s\+\%#\@<!$/
+"~" autocmd InsertLeave * match EspaceFinLigne /\s\+$/
+"~" autocmd BufWinLeave * call clearmatches()
+
+" ~~ Coloration du fond après n colonnes ~~
+" ~~ /!\ Seulement pour vim 7.3 et plus /!\ ~~
+" ~~ Adapté de http://blog.hanschen.org ~~
+
+"~" highlight ColorColumn ctermbg=DarkGrey guibg=DarkGrey
+"~" if exists('+colorcolumn')
+"~"     execute "set colorcolumn=".join(range(81,335), ',')
+"~" endif
+
