@@ -19,6 +19,7 @@ set backspace=indent,eol,start
 map <Down> gj
 map <Up> gk
 set t_Co=256
+command! -bar -nargs=0 Wsudo :silent exe "write !sudo tee % >/dev/null" | silent edit!
 
 set exrc
 set secure
