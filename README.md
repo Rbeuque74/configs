@@ -1,6 +1,6 @@
 configs
 =======
-###### Romain Beuque 2013
+###### Romain Beuque 2013-2015
 
 Fichiers de configuration Linux personnels.
 <http://www.romainbeuque.fr>
