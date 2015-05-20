@@ -66,6 +66,7 @@
     default = current
 [diff]
   memonicprefix = true
+	submodule = log
 [branch]
   autosetuprebase = always
 [apply]
@@ -170,3 +171,7 @@
 	history-view-vpane-position = 674
 	file-view-hpane-position = 188
 	main-window-view = HistoryView
+[status]
+	submoduleSummary = true
+[fetch]
+	recurseSubmodules = on-demand
