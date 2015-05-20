@@ -36,6 +36,8 @@ Plugin 'fatih/vim-go'
 Plugin 'elzr/vim-json'
 " trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
+" comment pluggin
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'Valloric/YouCompleteMe'
 
@@ -72,7 +74,7 @@ syn on
 set gfn=Inconsolata\ 9
 "set lines=45 columns=90
 set number
-set ruler
+set ruler 
 set autoindent
 set cindent
 filetype on
